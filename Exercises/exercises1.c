@@ -121,6 +121,74 @@ int sixty(){
     return 0;
 }
 
+int ninety(){
+
+    int p, q, r, s;
+
+    printf("\nThis is the password varification");
+    printf("\nInsert value p: ");
+    scanf("%d", &p);
+    printf("\nInsert value q: ");
+    scanf("%d", &q);
+    printf("\nInsert value r: ");
+    scanf("%d", &r);
+    printf("\nInsert value s: ");
+    scanf("%d", &s);
+
+    if ( ((s%2) == 0) || (p>0 && q>0 && r>0)  ) {
+        printf("Wrong values");
+        exit(1);
+    }
+
+    if ( (q>r) &&    (s > r)   &&( (r+s)>(p+q)) ){
+        printf("Correct Values");
+    } else {
+        printf("Wrong values");
+    }
+
+    return 0;
+}
+
+int twentytwo(){
+    int i, numbers[5], sum =0;
+    
+    printf("\nInput the first number: ");
+    scanf("%d", &numbers[0]);
+    printf("\nInput the second number: ");
+    scanf("%d", &numbers[1]);
+    printf("\nInput the third number: ");
+    scanf("%d", &numbers[2]);
+    printf("\nInput the fourth number: ");
+    scanf("%d", &numbers[3]);
+    printf("\nInput the fifth number: ");
+    scanf("%d", &numbers[4]);
+
+    for (i = 0; i<5; i++){
+        if((numbers[i]%2) !=0){
+            sum += numbers[i];
+        }
+    }
+
+    printf("The sum of all even numbers is: %d", sum);
+    return 0;
+}
+
+int twentyfive(){
+    //Get month name from number (1-12)
+
+    const char *months[] = {"January","February","March","April","May","June",
+        "July","Ausgust","September","October","November","December"};
+    
+    int i;
+    printf("\nType the month number: ");
+    scanf("%d", &i);
+    i -= 1; //To look in the array.
+
+    printf("\nThe %d month is: %s",(i+1),months[i]);
+    return 0;
+}
+
+
 void main(){
     //The only reason of this function is to call every other function.
 
@@ -130,6 +198,9 @@ void main(){
     //ten();
     //thirty();
     //sixty();
+    //ninety();
+    //twentytwo();
+    twentyfive();
     
 
 
